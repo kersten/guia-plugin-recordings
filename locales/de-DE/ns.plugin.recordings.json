@@ -1,0 +1,10 @@
+{
+    "menu": {
+        "title": "Aufnahmen",
+        "recordings": "Aufnahmen",
+        "scheduled": "Geplante Augnahmen",
+        "new": "Neue Aufnahmen planen"
+    },
+
+    "title": "Aufnahmen"
+}
