@@ -13,5 +13,13 @@
         "path": "!/Recordings",
         "action": "recordingsRoute",
         "view": "RecordingsView"
+    }, {
+        "needsLogin": true,
+        "path": "!/Recordings/:section",
+        "action": "recordingsSectionRoute",
+        "view": "RecordingsView",
+        "parameter": [{
+            "name": "section"
+        }]
     }]
 }
