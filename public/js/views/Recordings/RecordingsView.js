@@ -3,9 +3,11 @@ var RecordingsRecordingsView = Backbone.View.extend({
     className: 'span12',
 
     initialize: function () {
-        var self = this;
+        "use strict";
 
-        $(this.el).html(_.template( $('#' + this.template).html(), {} ));
+        var _this = this;
+
+        $(this.el).html(_.template($('#' + this.template).html(), {}));
 
         this.collection = new RecordingCollection();
 
@@ -15,12 +17,14 @@ var RecordingsRecordingsView = Backbone.View.extend({
                     model: model
                 });
 
-                $('.thumbnails', self.el).append(view.render().el);
+                $('.thumbnails', _this.el).append(view.render().el);
             });
         }});
     },
 
     render: function () {
+        "use strict";
+
         return this;
     }
 });

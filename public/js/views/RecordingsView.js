@@ -34,7 +34,7 @@ var RecordingsView = Backbone.View.extend({
         $('a[data-view="' + this.options.section + '"]', this.el).parent().addClass('active');
         $('#' + this.options.section, this.el).addClass('active');
 
-        if (this.subView != null) {
+        if (this.subView !== undefined) {
             this.subView.remove();
         }
 
