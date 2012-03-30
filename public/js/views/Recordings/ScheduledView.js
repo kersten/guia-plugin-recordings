@@ -3,18 +3,23 @@ var RecordingsScheduledView = Backbone.View.extend({
     className: 'span12 columns',
 
     initialize: function () {
-        var self = this;
+        "use strict";
 
-        $(this.el).html(_.template( $('#' + this.template).html(), {} ));
+        var _this = this;
+
+        $(this.el).html(_.template($('#' + this.template).html(), {}));
 
         this.collection = new TimerCollection();
         this.collection.fetch({success: function (collection) {
             collection.forEach(function (model) {
-                var view = new RecordingsScheduledItemView({
-                    model: model
-                });
+                try {
+                    var view = new RecordingsScheduledItemView({
+                        model: model
+                    });
 
-                $('.thumbnails', self.el).append(view.render().el);
+
+                    $('table > tbody', _this.el).append(view.render().el);
+                } catch (e) {}
             });
         }})
     },
